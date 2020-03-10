@@ -1,6 +1,8 @@
 # mytest
 vue的第一个学习demo
 
+# 一、vue项目创建配置：
+
 1.安装vue-cli（cmd中npm install —global vue-cli）：是vue.js的脚手架，用于自动生成vue.js+webpack的项目模板
 
     $npm install -g vue-cil
