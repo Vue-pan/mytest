@@ -2,7 +2,7 @@
   <div class="wrapper">
   	<swiper :options="swiperOption">
 	    <swiper-slide 
-	    	v-for="item of headerImg"
+	    	v-for="item of swiperList"
 	    	:key="item.id"
 	    	>
 	    	<img class="swiper-img" :src="item.imgUrl">
@@ -19,7 +19,7 @@ export default {
   name: 'homeSwiper',
   data(){
   	return {
-  		headerImg:[
+  		swiperList:[
   			{
   				id:'001',
   				imgUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583836026127&di=78bafdeef1d71700ab7832621aa8145e&imgtype=0&src=http%3A%2F%2Fa0.att.hudong.com%2F64%2F76%2F20300001349415131407760417677.jpg'
