@@ -73,7 +73,7 @@ export default {
   				id:'000y2',
   				title:'主标题2',
   				subTitle:'副标题2',
-  				imgUrl:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=341994340,131276972&fm=15&gp=0.jpg'
+  				imgUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1584004567558&di=3cee524e265b969c6efec2b57447ba0d&imgtype=0&src=http%3A%2F%2Ft-1.tuzhan.com%2F2693e95b70cc%2Fc-1%2Fl%2F2012%2F09%2F21%2F17%2Fddaabba1fc204dac9f750bb1a6d1bf3a.jpg'
   			}
   		]
   	}
