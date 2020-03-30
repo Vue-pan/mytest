@@ -32,42 +32,18 @@
 <script>
 export default {
 	name: 'homeGuess',
+	props:{
+		guessList:Array
+	},
 	data(){
 		return{
-			guessDescChange:'',
-			guessList:[
-				{
-					id:'000a1',
-					imgUrl:'http://img4.imgtn.bdimg.com/it/u=125898676,2935128648&fm=26&gp=0.jpg',
-					rank:'1202点评.98%',
-					desc:'建筑风景大全有全世界最美的建',
-					distance:'1.23',
-					prise:'280'
-				},
-				{
-					id:'000a2',
-					imgUrl:'http://img5.imgtn.bdimg.com/it/u=1876790205,1914446402&fm=26&gp=0.jpg',
-					rank:'2402点评.99%',
-					desc:'建筑风景大全有全世界最美的建',
-					distance:'1.50',
-					prise:'299'
-				},
-				{
-					id:'000a3',
-					imgUrl:'http://img0.imgtn.bdimg.com/it/u=3252879697,959248775&fm=26&gp=0.jpg',
-					rank:'120点评.95%',
-					desc:'建筑风景大全有全世界最美的建',
-					distance:'3.50',
-					prise:'180'
-				}
-			]
+			guessDescChange:''
 		}
 	},
 	methods:{
 		scrollChange(){
 			//获取滚动距离
 			let height = document.documentElement.scrollTop
-			console.log("height:",height)
 			if(height>715){
 				this.guessDescChange = 'guessDescChange'
 			}else{

@@ -8,7 +8,7 @@
   		北京公园
   	</div>
   	<div class="header-city" :class="[showCity]">
-  		北京
+  		{{this.city}}
   		<span class="iconfont">&#xe65d</span>
   	</div>
   </div>
@@ -17,6 +17,7 @@
 <script>
 export default {
   name: 'homeHead',
+  props:['city'],
   data(){
   	return{
   		showHeader:'',
@@ -29,7 +30,6 @@ export default {
 		scrollChange(){
 			//获取滚动距离
 			let height = document.documentElement.scrollTop
-			console.log("height:",height)
 			if(height>10){
 				this.showHeader = 'showHeader'
 				this.showBack = 'showBack'

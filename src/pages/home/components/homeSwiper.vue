@@ -17,18 +17,11 @@
 //指令缩写 (用 : 表示 v-bind: 、用 @ 表示 v-on: 和用 # 表示 v-slot:)
 export default {
   name: 'homeSwiper',
+  props:{
+    swiperList:Array
+  },
   data(){
   	return {
-  		swiperList:[
-  			{
-  				id:'001',
-  				imgUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583836026127&di=78bafdeef1d71700ab7832621aa8145e&imgtype=0&src=http%3A%2F%2Fa0.att.hudong.com%2F64%2F76%2F20300001349415131407760417677.jpg'
-  			},
-  			{
-  				id:'002',
-  				imgUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583836026128&di=7626998d4f75df57c661545d3f9cb4bf&imgtype=0&src=http%3A%2F%2Fbbs.jooyoo.net%2Fattachment%2FMon_0905%2F24_65548_2835f8eaa933ff6.jpg'
-  			}
-  		],
   		swiperOption:{
   			pagination:'.swiper-pagination',
   			loop:true //是否循环

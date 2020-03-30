@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
   	<div class="icon" 
-  		 v-for="item of catalogList"
+  		 v-for="item of iconList"
   		 :key="item.id"
   		 >
   		<div class="icon-img">
@@ -20,38 +20,15 @@
 <script>
 export default {
   name: 'homeCatalog',
+  props:{
+    iconList:Array
+  },
   data(){
   	return{
   		red:'red',
   		blue:'blue',
   		orange:'orange',
   		green:'green',
-  		catalogList:[
-  			{
-  				id:'0001',
-  				imgUrl:'http://thumbs.dreamstime.com/t/释放行情-页象-特别黄色圆的按钮-104723572.jpg',
-  				desc:'目录一',
-  				color:'orange'
-  			},
-  			{
-  				id:'0002',
-  				imgUrl:'http://thumbs.dreamstime.com/t/音乐象典雅的黄色圆的按钮-100204631.jpg',
-  				desc:'目录二',
-  				color:'red'
-  			},
-  			{
-  				id:'0003',
-  				imgUrl:'http://thumbs.dreamstime.com/t/释放行情-页象-特别黄色圆的按钮-104723572.jpg',
-  				desc:'目录三',
-  				color:'blue'
-  			},
-  			{
-  				id:'0004',
-  				imgUrl:'http://thumbs.dreamstime.com/t/书象典雅的红色圆的按钮-104815051.jpg',
-  				desc:'目录四',
-  				color:'green'
-  			},
-  		]
   	}
   }
 }

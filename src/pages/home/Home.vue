@@ -1,11 +1,15 @@
 <template>
 	<div class="home">
-		<home-head class="home-head"></home-head>
-		<home-swiper></home-swiper>
-		<home-catalog></home-catalog>
-		<home-hot></home-hot>
-		<home-weekend></home-weekend>
-		<home-guess></home-guess>
+		<home-head class="home-head" :city="city"></home-head>
+		<home-swiper :swiperList="swiperList"></home-swiper>
+		<home-catalog :iconList="iconList"></home-catalog>
+		<home-hot
+			:hotContentList="hotContentList"
+			:hotPriseList="hotPriseList"
+			:hotRightList="hotRightList"
+		></home-hot>
+		<home-weekend :weekendList="weekendList"></home-weekend>
+		<home-guess :guessList="guessList"></home-guess>
 	</div>
 </template>
 
@@ -18,6 +22,8 @@ import homeHot from './components/homeHot'
 import homeWeekend from './components/homeWeekend'
 import homeGuess from './components/homeGuess'
 
+import axios from 'axios'
+
 export default {
   name: 'Home',
   components:{
@@ -27,6 +33,42 @@ export default {
   	homeHot,
   	homeWeekend,
   	homeGuess
+  },
+  data(){
+  	return{
+  		city:'',
+  		swiperList:[],
+  		iconList:[],
+  		guessList:[],
+  		hotContentList:[],
+  		hotPriseList:[],
+  		hotRightList:[],
+  		weekendList:[],
+  	}
+  },
+  methods:{
+  	getHomeData(){
+  		axios.get("/api/index.json")
+  			.then(this.getHomeDataSuccess)
+  	},
+  	getHomeDataSuccess(res){
+  		console.log('res:',res)
+  		const result = res.data
+  		if(result.data){
+  			const data = result.data
+  			this.city = data.city
+  			this.swiperList = data.swiperList
+  			this.iconList = data.iconList
+  			this.guessList = data.guessList
+  			this.hotContentList = data.hotContentList
+  			this.hotPriseList = data.hotPriseList
+  			this.hotRightList = data.hotRightList
+  			this.weekendList = data.weekendList
+  		}
+  	}
+  },
+  mounted(){//当页面加载完就执行
+  	this.getHomeData()
   }
 }
 </script>

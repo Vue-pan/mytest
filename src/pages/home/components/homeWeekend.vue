@@ -9,7 +9,7 @@
   	<div class="week-swiper">
   		<swiper :options="swiperOption">
 		    <swiper-slide
-		    	v-for="item of weekSwiperList"
+		    	v-for="item of weekendList"
 	    		:key="item.id"
 		    >
 		    	<div class="weekSwiper-item">
@@ -30,28 +30,11 @@
 <script>
 export default {
   name: 'homeWeekend',
+  props:{
+  	weekendList:Array
+  },
   data(){
   	return{
-  		weekSwiperList:[
-  			{
-  				id:'000z1',
-  				imgUrl:'http://img2.imgtn.bdimg.com/it/u=4035618483,1210925427&fm=26&gp=0.jpg',
-  				title:'岩石窟',
-  				subTitle:'特有岩石风景'
-  			},
-  			{
-  				id:'000z2',
-  				imgUrl:'http://img4.imgtn.bdimg.com/it/u=152852254,3260972280&fm=26&gp=0.jpg',
-  				title:'海牙湾',
-  				subTitle:'特有海边风景'
-  			},
-  			{
-  				id:'000z3',
-  				imgUrl:'http://attach.bbs.miui.com/forum/201312/03/165620x7cknad7vruvec1z.jpg',
-  				title:'山水峡',
-  				subTitle:'特有山水风景'
-  			},
-  		],
   		swiperOption:{
   			freeMode:true,
   			spaceBetween:20,

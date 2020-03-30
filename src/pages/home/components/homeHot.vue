@@ -46,37 +46,10 @@
 <script>
 export default {
   name: 'homeHot',
-  data(){
-  	return{
-  		hotContentList:[
-  			{
-  				id:'00001',
-  				imgUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583920142929&di=b9a10b4434461fafddb53082c6ba6a0b&imgtype=0&src=http%3A%2F%2Fimg.duoziwang.com%2F2018%2F06%2F2018010144145406.jpg',
-  				desc:'景观图片自然现象图片夏季图片海边风景图片滩涂图片田野图片草地图片日出图片朝霞图片黎明图片沙漠图片撒哈拉沙漠图片森林图片树林图片洞穴图片洞穴风景图片瀑布图片山涧图片'
-  			}
-  		],
-  		hotPriseList:[
-  			{
-  				id:'000x1',
-	  			num:'300',
-	  			prise:'299'
-  			}
-  		],
-  		hotRightList:[
-  			{
-  				id:'000y1',
-  				title:'主标题1',
-  				subTitle:'副标题1',
-  				imgUrl:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=341994340,131276972&fm=15&gp=0.jpg'
-  			},
-  			{
-  				id:'000y2',
-  				title:'主标题2',
-  				subTitle:'副标题2',
-  				imgUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1584004567558&di=3cee524e265b969c6efec2b57447ba0d&imgtype=0&src=http%3A%2F%2Ft-1.tuzhan.com%2F2693e95b70cc%2Fc-1%2Fl%2F2012%2F09%2F21%2F17%2Fddaabba1fc204dac9f750bb1a6d1bf3a.jpg'
-  			}
-  		]
-  	}
+  props:{
+  	hotContentList:Array,
+  	hotPriseList:Array,
+  	hotRightList:Array,
   }
 }
 </script>
