@@ -52,7 +52,7 @@ export default {
   			.then(this.getHomeDataSuccess)
   	},
   	getHomeDataSuccess(res){
-  		console.log('res:',res)
+  		//console.log('res:',res)
   		const result = res.data
   		if(result.data){
   			const data = result.data

@@ -7,10 +7,12 @@
   		<span class="iconfont">&#xe688</span>
   		北京公园
   	</div>
-  	<div class="header-city" :class="[showCity]">
+  	<router-link to="/location">
+  		<div class="header-city" :class="[showCity]">
   		{{this.city}}
   		<span class="iconfont">&#xe65d</span>
   	</div>
+  	</router-link>
   </div>
 </template>
 
