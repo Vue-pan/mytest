@@ -3,7 +3,10 @@
   	<div>
 	  	<div class="present-area">
 	  		<div class="present-title" ref="present">当前</div>
-	  		<div class="present-button">{{this.city}}</div>
+	  		<div 
+	  			class="present-button"
+	  			@click="handlepresentClick"
+  			>{{this.$store.state.city}}</div>
 	  	</div>
 	  	<div class="hot-area">
 	  		<div class="hot-title">热门城市</div>
@@ -11,6 +14,7 @@
 	  			<div class="hot-button"
 	  				v-for="item of hotCities"
 	  				:key="item.id"
+	  				@click="handleCurrentClick(item.name)"
 	  			>{{item.name}}</div>
 	  		</div>
 	  	</div>
@@ -25,6 +29,7 @@
 	  				<div class="alph-button border-bottom"
 	  					v-for="innerItem of item"
 	  					:key="innerItem.id"
+	  					@click="handleCurrentClick(innerItem.name)"
 	  				>{{innerItem.name}}</div>
 	  			</div>
 	  		</div>
@@ -35,13 +40,24 @@
 
 <script>
 import BScroll from 'better-scroll'
-import BMap from 'BMap'
 export default {
   name: 'locationList',
   props:{
     letter:String,
     hotCities:Array,
     cities:Object
+  },
+  methods:{
+  	handleCurrentClick(city){
+  		//更新城市数据
+  		this.$store.dispatch('cityChange',city)
+  		//跳转到跟目录
+  		this.$router.push('/')
+  	},
+  	handlepresentClick(){
+  		//跳转到跟目录
+  		this.$router.push('/')
+  	}
   },
   watch:{//监听letter
     letter(){
@@ -68,16 +84,6 @@ export default {
   			speed:20,
   			invert:false,
   			easeTime:300
-  		}
-  	})
-
-  	let map = new BMap.Map('allmap')
-  	let myCity = new BMap.LocalCity()
-  	myCity.get((result)=>{
-  		if(result){
-  			this.city = result.name
-  		}else{
-  			this.city = "正在获取位置信息"
   		}
   	})
   }

@@ -31,6 +31,7 @@
 					class="search-item"
 					v-for="item of list"
 					:key="item.id"
+          @click="handleItemClick(item.name)"
 				>{{item.name}}</li>
 			</ul>
 		</div>
@@ -100,6 +101,12 @@ export default {
   		this.list = ['']
 		this.show = "对不起，找不到"+content
   	},
+    handleItemClick(city){
+      //更新城市数据
+      this.$store.dispatch('cityChange',city)
+      //跳转到跟目录
+      this.$router.push('/')
+    },
   	loopAlphabet(lowerContent){
   		const citiesWrapper = this.cities
   		for(let i in citiesWrapper){
