@@ -17,3 +17,24 @@ vue的第一个学习demo
 
 5.$npm install stylus stylus-loader -D
     如果报错则执行：$cnpm install stylus stylus-loader -D
+    
+# 二、联调测试上线：
+
+1.联调（删除mock假数据）
+
+    1.1更改config/index.js
+    
+    1.2后端开启php的apache服务器
+    
+2.测试
+
+    2.1在package.json的scripts中修改 --host 0.0.0.0
+        
+3.打包
+
+    3.1修改目录tour
+    
+    3.2npm run build
+    
+    3.3dist文件放在后端
+
