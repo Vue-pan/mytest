@@ -13,9 +13,11 @@ vue的第一个学习demo
     
 3.$npm run dev 表示在前端起个服务器命令
 
-4.$npm install fastclick
+4.代码初始化（meta配置：移动项目需配置meta ；引入borde/reset.css：borde为了解决移动设备1像素的问题，reset为了解决厂商不同的问题；fastclick：解决移动端300毫秒的延迟；stylus-loader：书写样式的工具）：
 
-5.$npm install stylus stylus-loader -D
+    $npm install fastclick
+
+    $npm install stylus stylus-loader -D
     如果报错则执行：$cnpm install stylus stylus-loader -D
     
 # 二、联调测试上线：
